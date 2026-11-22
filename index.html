@@ -29,7 +29,7 @@ img{display:block;max-width:100%}
 .hd{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
 h1{font:800 clamp(36px,5.4vw,56px)/1.02 Archivo,sans-serif;margin:0;letter-spacing:-.025em;text-wrap:balance}
 .hd h1 span{display:inline-block;opacity:0;translate:0 .4em;animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*70ms)}
-.lead{color:var(--mut);max-width:48ch;margin:12px 0 0;font-size:17px}
+.lead{color:var(--ink);max-width:34ch;margin:14px 0 0;font:500 clamp(20px,2.3vw,28px)/1.3 Archivo,sans-serif;text-wrap:balance}
 .stat{display:flex;gap:22px}
 .stat b{display:block;font:800 32px/1 Archivo}.stat small{color:var(--mut);font-size:13px}
 .tape{margin:clamp(22px,3vw,36px) 0 clamp(26px,3.5vw,44px);overflow:hidden;mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
@@ -96,6 +96,8 @@ h1{font:800 clamp(36px,5.4vw,56px)/1.02 Archivo,sans-serif;margin:0;letter-spaci
 .wt span{opacity:.6}.wt i{grid-column:1/-1;height:8px;border-radius:9px;background:color-mix(in srgb,var(--g3) 14%,transparent);overflow:hidden}
 .wt em{display:block;height:100%;width:0;background:var(--g4);border-radius:9px;transition:width 1.2s .2s cubic-bezier(.2,.8,.2,1)}
 .ficha.vis .wt em{width:var(--w)}
+.buy{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;margin-top:16px;border-radius:14px;background:var(--g4);color:var(--g1);font-weight:700;font-size:17px;text-decoration:none;transition:transform .25s,box-shadow .25s}
+.buy:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px var(--g4)}
 .bgg{display:inline-flex;align-items:center;min-height:44px;color:var(--g4);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor}
 h2{font:var(--tf);font-size:clamp(26px,3vw,36px);line-height:1.05;margin:0 0 6px}
 .pal{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-bottom:clamp(36px,5vw,60px)}
@@ -136,8 +138,8 @@ h2{font:var(--tf);font-size:clamp(26px,3vw,36px);line-height:1.05;margin:0 0 6px
 <body>
 <main id="home" class="band"><div class="wrap">
   <div class="hd">
-    <div><h1 id="t1">Mi ludoteca</h1><p class="lead">Selecciona para conocer más</p></div>
-    <div class="stat"><div><b>6</b><small>juegos</small></div><div><b id="nf">33</b><small>fotos</small></div></div>
+    <div><h1 id="t1">Mi ludoteca</h1><p class="lead">Bienvenidos, aquí podrán conocer mis juegos, saber más de ellos y encontrar dónde comprarlos</p></div>
+    <div class="stat"><div><b>6</b><small>juegos</small></div></div>
   </div>
   <div class="tape" aria-hidden="true"><div class="row" id="tape"></div></div>
   <div class="grid" id="grid"></div>
@@ -160,19 +162,19 @@ const F=JSON.parse(document.getElementById('fotos').textContent);
 const G=[
  {s:'terraforming-mars',n:'Terraforming Mars',fx:'mars',tf:'900 1em Orbitron,sans-serif',c:['#1b1220','#c9875a','#f4e6d6','#f28a2b','#2f5da8','#4e9a3a'],
   t:'Corporaciones compitiendo por volver habitable el planeta rojo: temperatura, oxígeno y océanos, una carta a la vez.',
-  b:{m:'3',y:2016,j:'1–5',d:'120 min',e:'12+',w:3.27,r:'8.3',rk:'#9 general · #8 en estrategia',v:'115 mil',dis:'Jacob Fryxelius',art:'Isaac Fryxelius, Daniel Fryxelius',ed:'FryxGames',tipo:'Estrategia',
+  b:{buy:'https://diadejuegos.pe/euro-games/1668-terraforming-mars.html',m:'3',y:2016,j:'1–5',d:'120 min',e:'12+',w:3.27,r:'8.3',rk:'#9 general · #8 en estrategia',v:'115 mil',dis:'Jacob Fryxelius',art:'Isaac Fryxelius, Daniel Fryxelius',ed:'FryxGames',tipo:'Estrategia',
    q:'En el siglo XXV, grandes corporaciones patrocinadas por un gobierno mundial reciben el encargo de terraformar Marte: subir la temperatura y el oxígeno y cubrirlo de océanos hasta hacerlo habitable. Cada jugador dirige una de esas corporaciones. Todos colaboran con el proceso, pero compiten por los puntos de victoria, que se ganan por aportar a la terraformación y también por expandir la infraestructura humana en el sistema solar.',
    k:['Más de 200 cartas de proyecto distintas, cada una con efectos inmediatos o de producción','Gestión de mano y selección de cartas','Colocación de losetas hexagonales: ciudades, bosques y océanos','Poderes distintos según la corporación que te toque'],
    u:'https://boardgamegeek.com/boardgame/167791/terraforming-mars'}},
  {s:'iss-vanguard',n:'ISS Vanguard',fx:'stars',tf:'800 1em "Exo 2",sans-serif',c:['#150f33','#3d2f8f','#eef0fa','#ff4d8d','#5fc9e6','#b7c4f0'],
   t:'La tripulación de la primera nave interestelar sale a lo desconocido: aterrizajes, descubrimientos y decisiones que pesan en la campaña.',
-  b:{m:'3',y:2022,j:'1–4',d:'90–120 min',e:'13+',w:3.67,r:'8.3',rk:'#161 general · #30 en temáticos',v:'7.2 mil',dis:'Andrzej Betkiewicz, Krzysztof Piskorski, Paweł Samborski, Marcin Świerkot',art:'Piotr Gacek, Patryk Jędraszek, Ewa Labak, Pamela Łuniewska y otros',ed:'Awaken Realms',tipo:'Temático',
+  b:{buy:'https://diadejuegos.pe/cooperativos/8498-iss-vanguard-caja-base.html',m:'3',y:2022,j:'1–4',d:'90–120 min',e:'13+',w:3.67,r:'8.3',rk:'#161 general · #30 en temáticos',v:'7.2 mil',dis:'Andrzej Betkiewicz, Krzysztof Piskorski, Paweł Samborski, Marcin Świerkot',art:'Piotr Gacek, Patryk Jędraszek, Ewa Labak, Pamela Łuniewska y otros',ed:'Awaken Realms',tipo:'Temático',
    q:'Los jugadores tripulan la ISS Vanguard, la primera nave en cruzar el espacio profundo en una misión para salvar a la humanidad. Cada jugador controla una de las cuatro secciones de la nave: seguridad, reconocimiento, ciencia e ingeniería. El juego se divide en dos fases: la exploración de planetas, que ocurre en tableros propios de cada mundo, y la gestión de la nave, donde se mejora la Vanguard, se recluta tripulación, se investiga y se fabrica equipo.',
    k:['Campaña larga y cooperativa con historia, o misiones sueltas de una sesión','Más de 20 exploraciones planetarias de 2 a 4 horas cada una','Libro de la nave para mejorar la Vanguard entre misiones','Muy valorado para jugar en solitario'],
    u:'https://boardgamegeek.com/boardgame/325494/iss-vanguard'}},
  {s:'this-war-of-mine',n:'This War of Mine',fx:'ash',tf:'400 1em "Special Elite",monospace',c:['#141618','#3e4a54','#e4dfd4','#c7332a','#d99a3a','#6e6a63'],
   t:'Civiles atrapados en una ciudad en guerra toman decisiones difíciles para sobrevivir.',
-  b:{m:'1',y:2017,j:'1–6',d:'45–120 min',e:'18+',w:3.34,r:'7.8',rk:'#226 general · #55 en temáticos',v:'15 mil',dis:'Michał Oracz, Jakub Wiśniewski',art:'Piotr Gacek, Maszrum, Paweł Niziołek, Michał Oracz, Jakub Wiśniewski',ed:'Awaken Realms',tipo:'Temático',
+  b:{buy:'https://diadejuegos.pe/tematicos/3465-this-war-of-mine-el-juego.html',m:'1',y:2017,j:'1–6',d:'45–120 min',e:'18+',w:3.34,r:'7.8',rk:'#226 general · #55 en temáticos',v:'15 mil',dis:'Michał Oracz, Jakub Wiśniewski',art:'Piotr Gacek, Maszrum, Paweł Niziołek, Michał Oracz, Jakub Wiśniewski',ed:'Awaken Realms',tipo:'Temático',
    q:'Basado en el videojuego del mismo nombre, pone a los jugadores del lado de los civiles en una ciudad sitiada. El objetivo no es ganar sino seguir con vida hasta que acabe la guerra: de día se mantiene el refugio y de noche se sale a buscar recursos, con decisiones morales que pesan en cada jornada. Es cooperativo y se juega muy bien en solitario.',
    k:['Cooperativo: todos sobreviven o fracasan juntos','Libro de guiones con cientos de párrafos narrativos','Ciclo de día y noche: refugio, exploración y eventos','Expansión Tales from the Ruined City con alcantarillas, granjeros y más'],
    u:'https://boardgamegeek.com/boardgame/188920/this-war-of-mine-the-board-game'}},
@@ -184,13 +186,13 @@ const G=[
    u:'https://boardgamegeek.com/boardgame/55690/kingdom-death-monster'}},
  {s:'robinson-crusoe',n:'Robinson Crusoe',fx:'waves',tf:'400 1em "IM Fell English",serif',c:['#10291c','#2e9bb8','#f4eedc','#f0a030','#9c2424','#3e8e3a'],
   t:'Náufragos trabajando juntos, con amigos o con Viernes, para sobrevivir en una isla desierta.',
-  b:{m:'3',y:2012,j:'1–4',d:'60–120 min',e:'14+',w:3.83,r:'7.7',rk:'#122 general · #39 en temáticos',v:'47 mil',dis:'Joanna Kijanka, Ignacy Trzewiczek',art:'Tomasz Bentkowski, Mateusz Bielski, Vincent Dutrait, Jerzy Ferdyn y otros',ed:'Portal Games',tipo:'Temático',
+  b:{buy:'https://diadejuegos.pe/cooperativos/8258-robinson-crusoe.html',m:'3',y:2012,j:'1–4',d:'60–120 min',e:'14+',w:3.83,r:'7.7',rk:'#122 general · #39 en temáticos',v:'47 mil',dis:'Joanna Kijanka, Ignacy Trzewiczek',art:'Tomasz Bentkowski, Mateusz Bielski, Vincent Dutrait, Jerzy Ferdyn y otros',ed:'Portal Games',tipo:'Temático',
    q:'Los jugadores son sobrevivientes de un naufragio en una isla desierta. Tienen que construir un refugio, conseguir comida, enfrentarse a animales salvajes y protegerse de los cambios de clima. Cada uno toma el papel de un miembro de la tripulación, como el cocinero, el carpintero o el explorador, y entre todos deciden cómo avanza la partida y cómo se verá su campamento tras varias semanas de trabajo.',
    k:['Cooperativo, con Viernes y el perro como ayudantes en solitario','Escenarios con objetivos distintos','Exploración de la isla con losetas hexagonales','Inventos y construcciones: muros, armas y herramientas'],
    u:'https://boardgamegeek.com/boardgame/121921/robinson-crusoe-adventures-on-the-cursed-island'}},
  {s:'root',n:'Root',fx:'leaves',tf:'800 1em Alegreya,serif',c:['#1f2b22','#4c5e44','#f2eee2','#ef7a2a','#2a63d6','#8dc63f'],
   t:'Facciones asimétricas luchan por objetivos distintos para decidir el destino del bosque.',
-  b:{m:'4',y:2018,j:'2–4',d:'60–90 min',e:'14+',w:3.84,r:'8.1',rk:'#34 general · #15 en guerra · #38 en estrategia',v:'67 mil',dis:'Cole Wehrle',art:'Kyle Ferrin',ed:'Leder Games',tipo:'Estrategia / guerra',
+  b:{buy:'https://diadejuegos.pe/euro-games/4014-root.html',m:'4',y:2018,j:'2–4',d:'60–90 min',e:'14+',w:3.84,r:'8.1',rk:'#34 general · #15 en guerra · #38 en estrategia',v:'67 mil',dis:'Cole Wehrle',art:'Kyle Ferrin',ed:'Leder Games',tipo:'Estrategia / guerra',
    q:'El gran bosque está en disputa. Cada jugador controla una facción con reglas y objetivos propios: unos buscan dominar el territorio con su ejército, otros construir alianzas o actuar en solitario. Esa asimetría hace que cada partida se sienta distinta según qué facciones estén en la mesa, y que haya que entender cómo juega cada rival para frenarlo.',
    k:['Facciones totalmente asimétricas','Control de área en los claros del bosque','Hasta 6 jugadores con la expansión de Riverfolk','Varias expansiones con facciones y mapas nuevos'],
    u:'https://boardgamegeek.com/boardgame/237182/root'}}
@@ -201,7 +203,7 @@ const $=q=>document.querySelector(q),RM=matchMedia('(prefers-reduced-motion: red
 const home=$('#home'),game=$('#game'),wipe=$('#wipe'),lb=$('#lb');
 const split=s=>s.split(' ').map((w,i)=>`<span style="--i:${i}">${w}</span>`).join(' ');
 $('#t1').innerHTML=split('Mi ludoteca');
-const total=()=>G.reduce((a,g)=>a+g.p.length,0);$('#nf').textContent=total();
+
 
 /* cinta de fotos */
 const th=G.flatMap(g=>g.p.slice(0,3).map(p=>`<img src="${p.u}" alt="" loading="lazy">`));
@@ -210,7 +212,7 @@ $('#tape').innerHTML=th.join('')+th.join('');
 /* tarjetas */
 $('#grid').innerHTML=G.map((g,i)=>`<button class="box" style="--i:${i};--c1:${g.c[0]};--c3:${g.c[2]};--tf:${g.tf}" data-s="${g.s}" aria-label="Abrir ${g.n}">
  <div class="art"><img src="${g.p[0].u}" alt="" loading="lazy"><div class="nm">${g.n}</div><span class="glare"></span></div>
- <div class="meta"><small>${g.p.length} fotos · ${g.f[0]}</small></div></button>`).join('');
+ <div class="meta"><small>${g.f[0]}</small></div></button>`).join('');
 document.querySelectorAll('.box').forEach(b=>{
  if(!RM)b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;b.style.transform=`rotateY(${(x-.5)*10}deg) rotateX(${(.5-y)*10}deg) translateY(-6px)`;b.style.setProperty('--gx',x*100+'%');b.style.setProperty('--gy',y*100+'%')});
  b.addEventListener('pointerleave',()=>b.style.transform='');
@@ -235,7 +237,7 @@ function render(g){
     <dl>${[['Ranking',g.b.rk],['Año',g.b.y],['Jugadores',g.b.j],['Mejor a',g.b.m+(g.b.m=='1'?' jugador':' jugadores')],['Duración',g.b.d],['Edad',g.b.e],['Diseño',g.b.dis],['Arte',g.b.art],['Editorial',g.b.ed]].map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('')}</dl>
     <div class="wt"><span>Complejidad</span><b>${g.b.w.toFixed(2)} / 5</b><i><em style="--w:${g.b.w/5*100}%"></em></i></div>
     <a class="bgg" href="${g.b.u}" target="_blank" rel="noopener">Ver ficha en BoardGameGeek ↗</a>
-    <p class="fine">Datos de BoardGameGeek consultados el 22 de noviembre de 2026. El ranking cambia todos los días.</p></aside>
+    <p class="fine">Datos de BoardGameGeek consultados el 22 de noviembre de 2026. El ranking cambia todos los días.</p>${g.b.buy?`<a class="buy" href="${g.b.buy}" target="_blank" rel="noopener">Compra Aquí</a>`:''}</aside>
   </section>
   <div class="gh"><h2>Galería</h2>
    <label class="up" tabindex="0" id="upl">＋ Subir fotos<input id="file" type="file" accept="image/*" multiple hidden></label></div>
@@ -246,7 +248,7 @@ function render(g){
  </div>`;
  drawGal();
  game.querySelectorAll('[data-h]').forEach(b=>b.onclick=e=>go(b.dataset.h,e.clientX,e.clientY));
- const add=fs=>{[...fs].filter(f=>f.type.startsWith('image/')).forEach(f=>g.p.push({u:URL.createObjectURL(f),local:1}));drawGal();$('#nf').textContent=total()};
+ const add=fs=>{[...fs].filter(f=>f.type.startsWith('image/')).forEach(f=>g.p.push({u:URL.createObjectURL(f),local:1}));drawGal()};
  $('#file').onchange=e=>add(e.target.files);
  $('#upl').onkeydown=e=>{if(e.key=='Enter'||e.key==' '){e.preventDefault();$('#file').click()}};
  const gal=$('#gal');
