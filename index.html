@@ -52,7 +52,8 @@ h1{font:800 clamp(40px,6.2vw,96px)/1 Archivo,sans-serif;margin:0;letter-spacing:
 .meta small{color:var(--mut);font-size:13px}
 .chips{display:flex;gap:4px}.chips i{width:14px;height:14px;border-radius:50%;background:var(--x);box-shadow:inset 0 0 0 1px rgba(0,0,0,.14)}
 @keyframes rise{to{opacity:1;translate:0 0}}
-.cred{text-align:center;color:inherit;font-size:clamp(14px,1.1vw,17px);font-weight:500;margin:14px 0 0;padding-bottom:8px}.cred p{margin:0 0 6px}.cred .pe{display:inline-block;width:1.4em;height:.93em;vertical-align:-.14em;margin:0 .25em 0 .15em;border-radius:2px;box-shadow:0 0 0 1px rgba(128,128,128,.45)}
+.wsp{position:fixed;right:max(2.5vw,16px);bottom:max(2.5vw,16px);z-index:40;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px 0 16px;border-radius:999px;background:#25D366;color:#063a1d;font:700 16px/1 Inter,system-ui,sans-serif;text-decoration:none;box-shadow:0 10px 30px -8px rgba(0,0,0,.55),0 0 0 3px rgba(255,255,255,.35);transition:transform .25s,box-shadow .25s;animation:wpulse 2.6s ease-in-out infinite}.wsp svg{width:26px;height:26px;flex:none}.wsp:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 36px -10px rgba(0,0,0,.6),0 0 0 3px rgba(255,255,255,.5)}.wsp:focus-visible{outline:3px solid #063a1d;outline-offset:3px}@keyframes wpulse{0%,100%{box-shadow:0 10px 30px -8px rgba(0,0,0,.55),0 0 0 3px rgba(255,255,255,.35)}50%{box-shadow:0 10px 30px -8px rgba(0,0,0,.55),0 0 0 10px rgba(37,211,102,.28)}}
+.cred{text-align:center;color:inherit;font-size:clamp(14px,1.1vw,17px);font-weight:500;margin:14px 0 0;padding-bottom:8px}.cred p{margin:0 0 6px}.cred{padding-bottom:76px!important}.cred .pe{display:inline-block;width:1.4em;height:.93em;vertical-align:-.14em;margin:0 .25em 0 .15em;border-radius:2px;box-shadow:0 0 0 1px rgba(128,128,128,.45)}
 #game .cred{padding:clamp(28px,4vw,48px) 0 clamp(20px,3vw,36px);margin:0;opacity:.9}
 .foot{color:var(--mut);font-size:13px;margin-top:32px;border-top:1px solid var(--line);padding-top:18px}
 
@@ -98,6 +99,7 @@ h1{font:800 clamp(40px,6.2vw,96px)/1 Archivo,sans-serif;margin:0;letter-spacing:
 .wt span{opacity:.6}.wt i{grid-column:1/-1;height:8px;border-radius:9px;background:color-mix(in srgb,var(--g3) 14%,transparent);overflow:hidden}
 .wt em{display:block;height:100%;width:0;background:var(--g4);border-radius:9px;transition:width 1.2s .2s cubic-bezier(.2,.8,.2,1)}
 .ficha.vis .wt em{width:var(--w)}
+.tutw{display:flex;justify-content:center;margin-top:clamp(20px,2.5vw,32px)}.tut{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 34px;border-radius:14px;background:var(--g4);color:var(--g1);font-weight:700;font-size:17px;text-decoration:none;transition:transform .25s,box-shadow .25s}.tut svg{width:22px;height:22px}.tut:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px var(--g4)}.tut:focus-visible{outline:3px solid var(--g3);outline-offset:3px}
 .buy{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;margin-top:16px;border-radius:14px;background:var(--g4);color:var(--g1);font-weight:700;font-size:17px;text-decoration:none;transition:transform .25s,box-shadow .25s}
 .buy:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px var(--g4)}
 .bgg{display:inline-flex;align-items:center;min-height:44px;color:var(--g4);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor}
@@ -134,7 +136,7 @@ h2{font:var(--tf);font-size:clamp(26px,3vw,36px);line-height:1.05;margin:0 0 6px
 @keyframes fade{from{opacity:0}}@keyframes zoom{from{opacity:0;transform:scale(.94)}}
 @media(max-width:900px){.fs{grid-template-columns:minmax(0,1fr)}.fs>*,.fs>dl{grid-column:1;grid-row:auto}.fs dl{margin-bottom:16px;grid-template-columns:auto minmax(0,1fr)}.fs dl dd:nth-of-type(1){grid-column:auto}.fq ul{grid-template-columns:minmax(0,1fr)}.gal,.gal[data-n]{grid-template-columns:repeat(2,minmax(0,1fr))}.gal .ph,.gal[data-n] .ph,.gal[data-n="5"] .ph:nth-child(n+4){grid-column:span 1}.ficha{grid-template-columns:minmax(0,1fr)}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pal{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:700px){.hd{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:600px){.grid{grid-template-columns:minmax(0,1fr)}.next{grid-template-columns:minmax(0,1fr)}.hero{min-height:82vh}.tape img{height:64px}.lb .a{display:none}.hm{display:none}.stat{gap:16px}}
+@media(max-width:600px){.wsp{padding:0 16px 0 14px;font-size:15px}.grid{grid-template-columns:minmax(0,1fr)}.next{grid-template-columns:minmax(0,1fr)}.hero{min-height:82vh}.tape img{height:64px}.lb .a{display:none}.hm{display:none}.stat{gap:16px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;transition-delay:0s!important}.tape .row{animation:none}}
 </style>
 </head>
@@ -151,6 +153,9 @@ h2{font:var(--tf);font-size:clamp(26px,3vw,36px);line-height:1.05;margin:0 0 6px
 </div></main>
 
 <section id="game"></section>
+<a class="wsp" id="wsp" href="https://wa.me/51992771424?text=Hola%20Sergio%2C%20vi%20tu%20ludoteca%20y%20quisiera%20hacerte%20una%20consulta." target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp">
+ <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.8 2 6.8L3.2 29l6.6-1.7c1.9 1 4 1.6 6.2 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2 0-3.8-.6-5.4-1.5l-.4-.2-3.9 1 1-3.8-.3-.4a10.4 10.4 0 0 1-1.6-5.6C5.4 10 10.1 5.4 16 5.4S26.6 10 26.6 15.8 21.9 26.4 16 26.4zm5.8-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.6 5.800 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.100.1.6-.1 1.9-.8 2.200-1.500.3-.7.3-1.400.2-1.500-.1-.1-.3-.2-.6-.4z"/></svg>
+ <span>Escríbeme por WhatsApp</span></a>
 <div id="wipe"></div>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Visor de fotos">
   <span class="c" id="lbc"></span><img id="lbi" alt="">
@@ -164,37 +169,37 @@ h2{font:var(--tf);font-size:clamp(26px,3vw,36px);line-height:1.05;margin:0 0 6px
 {
 const F=JSON.parse(document.getElementById('fotos').textContent);
 const G=[
- {s:'terraforming-mars',n:'Terraforming Mars',fx:'mars',tf:'900 1em Orbitron,sans-serif',c:['#1b1220','#c9875a','#f4e6d6','#f28a2b','#2f5da8','#4e9a3a'],
+ {s:'terraforming-mars',tut:'VALSkPglyy0',n:'Terraforming Mars',fx:'mars',tf:'900 1em Orbitron,sans-serif',c:['#1b1220','#c9875a','#f4e6d6','#f28a2b','#2f5da8','#4e9a3a'],
   t:'Corporaciones compitiendo por volver habitable el planeta rojo: temperatura, oxígeno y océanos, una carta a la vez.',
   b:{buy:'https://diadejuegos.pe/euro-games/1668-terraforming-mars.html',m:'3',y:2016,j:'1–5',d:'120 min',e:'12+',w:3.27,r:'8.3',rk:'#9 general · #8 en estrategia',v:'115 mil',dis:'Jacob Fryxelius',art:'Isaac Fryxelius, Daniel Fryxelius',ed:'FryxGames',tipo:'Estrategia',
    q:'En el siglo XXV, grandes corporaciones patrocinadas por un gobierno mundial reciben el encargo de terraformar Marte: subir la temperatura y el oxígeno y cubrirlo de océanos hasta hacerlo habitable. Cada jugador dirige una de esas corporaciones. Todos colaboran con el proceso, pero compiten por los puntos de victoria, que se ganan por aportar a la terraformación y también por expandir la infraestructura humana en el sistema solar.',
    k:['Más de 200 cartas de proyecto distintas, cada una con efectos inmediatos o de producción','Gestión de mano y selección de cartas','Colocación de losetas hexagonales: ciudades, bosques y océanos','Poderes distintos según la corporación que te toque'],
    u:'https://boardgamegeek.com/boardgame/167791/terraforming-mars'}},
- {s:'iss-vanguard',n:'ISS Vanguard',fx:'stars',tf:'800 1em "Exo 2",sans-serif',c:['#150f33','#3d2f8f','#eef0fa','#ff4d8d','#5fc9e6','#b7c4f0'],
+ {s:'iss-vanguard',tut:'5TbmldPRgm0',n:'ISS Vanguard',fx:'stars',tf:'800 1em "Exo 2",sans-serif',c:['#150f33','#3d2f8f','#eef0fa','#ff4d8d','#5fc9e6','#b7c4f0'],
   t:'La tripulación de la primera nave interestelar sale a lo desconocido: aterrizajes, descubrimientos y decisiones que pesan en la campaña.',
   b:{buy:'https://diadejuegos.pe/cooperativos/8498-iss-vanguard-caja-base.html',m:'3',y:2022,j:'1–4',d:'90–120 min',e:'13+',w:3.67,r:'8.3',rk:'#161 general · #30 en temáticos',v:'7.2 mil',dis:'Andrzej Betkiewicz, Krzysztof Piskorski, Paweł Samborski, Marcin Świerkot',art:'Piotr Gacek, Patryk Jędraszek, Ewa Labak, Pamela Łuniewska y otros',ed:'Awaken Realms',tipo:'Temático',
    q:'Los jugadores tripulan la ISS Vanguard, la primera nave en cruzar el espacio profundo en una misión para salvar a la humanidad. Cada jugador controla una de las cuatro secciones de la nave: seguridad, reconocimiento, ciencia e ingeniería. El juego se divide en dos fases: la exploración de planetas, que ocurre en tableros propios de cada mundo, y la gestión de la nave, donde se mejora la Vanguard, se recluta tripulación, se investiga y se fabrica equipo.',
    k:['Campaña larga y cooperativa con historia, o misiones sueltas de una sesión','Más de 20 exploraciones planetarias de 2 a 4 horas cada una','Libro de la nave para mejorar la Vanguard entre misiones','Muy valorado para jugar en solitario'],
    u:'https://boardgamegeek.com/boardgame/325494/iss-vanguard'}},
- {s:'this-war-of-mine',n:'This War of Mine',fx:'ash',tf:'400 1em "Special Elite",monospace',c:['#141618','#3e4a54','#e4dfd4','#c7332a','#d99a3a','#6e6a63'],
+ {s:'this-war-of-mine',tut:'BWzZ61PojPM',n:'This War of Mine',fx:'ash',tf:'400 1em "Special Elite",monospace',c:['#141618','#3e4a54','#e4dfd4','#c7332a','#d99a3a','#6e6a63'],
   t:'Civiles atrapados en una ciudad en guerra toman decisiones difíciles para sobrevivir.',
   b:{buy:'https://diadejuegos.pe/tematicos/3465-this-war-of-mine-el-juego.html',m:'1',y:2017,j:'1–6',d:'45–120 min',e:'18+',w:3.34,r:'7.8',rk:'#226 general · #55 en temáticos',v:'15 mil',dis:'Michał Oracz, Jakub Wiśniewski',art:'Piotr Gacek, Maszrum, Paweł Niziołek, Michał Oracz, Jakub Wiśniewski',ed:'Awaken Realms',tipo:'Temático',
    q:'Basado en el videojuego del mismo nombre, pone a los jugadores del lado de los civiles en una ciudad sitiada. El objetivo no es ganar sino seguir con vida hasta que acabe la guerra: de día se mantiene el refugio y de noche se sale a buscar recursos, con decisiones morales que pesan en cada jornada. Es cooperativo y se juega muy bien en solitario.',
    k:['Cooperativo: todos sobreviven o fracasan juntos','Libro de guiones con cientos de párrafos narrativos','Ciclo de día y noche: refugio, exploración y eventos','Expansión Tales from the Ruined City con alcantarillas, granjeros y más'],
    u:'https://boardgamegeek.com/boardgame/188920/this-war-of-mine-the-board-game'}},
- {s:'kingdom-death-monster',n:'Kingdom Death: Monster',fx:'lantern',tf:'900 1em Cinzel,serif',c:['#141110','#3b3330','#e5dfd2','#e2b93b','#b5202a','#8c857a'],
+ {s:'kingdom-death-monster',tut:'em2KMod8xiA',n:'Kingdom Death: Monster',fx:'lantern',tf:'900 1em Cinzel,serif',c:['#141110','#3b3330','#e5dfd2','#e2b93b','#b5202a','#8c857a'],
   t:'Sobrevivir en un mundo de pesadilla bajo una oscuridad eterna, con una linterna como única luz.',
   b:{m:'4',y:2015,j:'1–4',d:'60–180 min',e:'17+',w:4.28,r:'8.5',rk:'#96 general · #21 en temáticos',v:'11 mil',dis:'Adam Poots',art:'Zeen Chin, Lokman Lam, Lorinda Tomko',ed:'Kingdom Death',tipo:'Temático',
    q:'Un grupo de sobrevivientes despierta en un mundo oscuro y hostil. La campaña alterna tres momentos: la cacería, en la que se rastrea a un monstruo; el enfrentamiento, un combate táctico sobre tablero contra un monstruo controlado por su propio mazo de IA; y el asentamiento, donde con lo obtenido se fabrica equipo, se desarrollan innovaciones y la comunidad avanza año tras año.',
    k:['Combate contra monstruos con mazos de IA propios','Campaña por años de linterna con eventos que marcan la historia','Fabricación de equipo con los recursos de cada monstruo','Gran cantidad de expansiones con monstruos y campañas nuevas'],
    u:'https://boardgamegeek.com/boardgame/55690/kingdom-death-monster'}},
- {s:'robinson-crusoe',n:'Robinson Crusoe',fx:'waves',tf:'400 1em "IM Fell English",serif',c:['#10291c','#2e9bb8','#f4eedc','#f0a030','#9c2424','#3e8e3a'],
+ {s:'robinson-crusoe',tut:'3J9LYNUWeVU',n:'Robinson Crusoe',fx:'waves',tf:'400 1em "IM Fell English",serif',c:['#10291c','#2e9bb8','#f4eedc','#f0a030','#9c2424','#3e8e3a'],
   t:'Náufragos trabajando juntos, con amigos o con Viernes, para sobrevivir en una isla desierta.',
   b:{buy:'https://diadejuegos.pe/cooperativos/8258-robinson-crusoe.html',m:'3',y:2012,j:'1–4',d:'60–120 min',e:'14+',w:3.83,r:'7.7',rk:'#122 general · #39 en temáticos',v:'47 mil',dis:'Joanna Kijanka, Ignacy Trzewiczek',art:'Tomasz Bentkowski, Mateusz Bielski, Vincent Dutrait, Jerzy Ferdyn y otros',ed:'Portal Games',tipo:'Temático',
    q:'Los jugadores son sobrevivientes de un naufragio en una isla desierta. Tienen que construir un refugio, conseguir comida, enfrentarse a animales salvajes y protegerse de los cambios de clima. Cada uno toma el papel de un miembro de la tripulación, como el cocinero, el carpintero o el explorador, y entre todos deciden cómo avanza la partida y cómo se verá su campamento tras varias semanas de trabajo.',
    k:['Cooperativo, con Viernes y el perro como ayudantes en solitario','Escenarios con objetivos distintos','Exploración de la isla con losetas hexagonales','Inventos y construcciones: muros, armas y herramientas'],
    u:'https://boardgamegeek.com/boardgame/121921/robinson-crusoe-adventures-on-the-cursed-island'}},
- {s:'root',n:'Root',fx:'leaves',tf:'800 1em Alegreya,serif',c:['#1f2b22','#4c5e44','#f2eee2','#ef7a2a','#2a63d6','#8dc63f'],
+ {s:'root',tut:'tpxV-uNZef4',n:'Root',fx:'leaves',tf:'800 1em Alegreya,serif',c:['#1f2b22','#4c5e44','#f2eee2','#ef7a2a','#2a63d6','#8dc63f'],
   t:'Facciones asimétricas luchan por objetivos distintos para decidir el destino del bosque.',
   b:{buy:'https://diadejuegos.pe/euro-games/4014-root.html',m:'4',y:2018,j:'2–4',d:'60–90 min',e:'14+',w:3.84,r:'8.1',rk:'#34 general · #15 en guerra · #38 en estrategia',v:'67 mil',dis:'Cole Wehrle',art:'Kyle Ferrin',ed:'Leder Games',tipo:'Estrategia / guerra',
    q:'El gran bosque está en disputa. Cada jugador controla una facción con reglas y objetivos propios: unos buscan dominar el territorio con su ejército, otros construir alianzas o actuar en solitario. Esa asimetría hace que cada partida se sienta distinta según qué facciones estén en la mesa, y que haya que entender cómo juega cada rival para frenarlo.',
@@ -252,7 +257,7 @@ function render(g){
   <div class="gh"><h2>Galería</h2>
    <label class="up" tabindex="0" id="upl">＋ Subir fotos<input id="file" type="file" accept="image/*" multiple hidden></label></div>
   <div class="gal" id="gal"></div>
-  <p class="fine">Las fotos que subas aquí se ven solo en esta pestaña; para que queden fijas hay que agregarlas a la carpeta del juego.</p>
+  ${g.tut?`<div class="tutw"><a class="tut" href="https://www.youtube.com/watch?v=${g.tut}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>Tutorial</a></div>`:''}
   <div class="next"><button class="nx" data-h="${pv.s}"><img src="${pv.p[0].u}" alt=""><span><small>Anterior</small><b>${pv.n}</b></span></button>
    <button class="nx r" data-h="${nx.s}"><img src="${nx.p[0].u}" alt=""><span><small>Siguiente</small><b>${nx.n}</b></span></button></div>
   ${CRED}
